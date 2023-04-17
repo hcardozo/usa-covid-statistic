@@ -1,0 +1,58 @@
+<div class="container-fluid bg-primary text-white py-3">
+  <div class="row">
+    <div class="col-md-10 mx-auto">
+      <div class="row">
+        <div class="col-md-9">
+          <p class="mb-0">INFORMACION ACERCA DE COVID 19 - ESTADOS UNIDOS</p>
+        </div>
+        <div class="col-md-3 text-right">
+          <a href="#" class="btn btn-outline-light">Más información</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid p-0" style="display: flex">
+  <img
+    src="https://cloudfront-us-east-2.images.arcpublishing.com/reuters/ABNK74TBDRI2NMSG3F6YWJFLCE.jpg"
+    class="img-fluid"
+    alt="Banner"
+    style="max-width: 30%; margin: 20px auto"
+  />
+</div>
+
+<div class="contenedor-fecha">
+  <input
+    class="input-fecha"
+    type="date"
+    [(ngModel)]="fecha"
+    (change)="searchInfo()"
+  />
+</div>
+
+<div class="card" style="max-width: 35%; margin: 25px auto">
+  <div class="card-header">
+    <h4>Mi tarjeta informativa</h4>
+  </div>
+  <div class="card-body">
+    <div class="campo">
+      <span class="campo-titulo">Campo 1:</span>
+      <span class="campo-valor">Valor 1</span>
+    </div>
+    <hr />
+    <div class="campo">
+      <span class="campo-titulo">Campo 2:</span>
+      <span class="campo-valor">Valor 2</span>
+    </div>
+    <hr />
+    <div class="campo">
+      <span class="campo-titulo">Campo 3:</span>
+      <span class="campo-valor">Valor 3</span>
+    </div>
+    <hr />
+    <div class="campo">
+      <span class="campo-titulo">Campo 4:</span>
+      <span class="campo-valor">Valor 4</span>
+    </div>
+  </div>
+</div>
