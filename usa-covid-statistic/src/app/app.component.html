@@ -26,33 +26,45 @@
     class="input-fecha"
     type="date"
     [(ngModel)]="fecha"
+    min="2020-01-01"
+    max="2021-03-07"
     (change)="searchInfo()"
   />
 </div>
 
-<div class="card" style="max-width: 35%; margin: 25px auto">
+<div class="card" style="max-width: 35%; margin: 25px auto" *ngIf="datosObtenidos">
   <div class="card-header">
-    <h4>Mi tarjeta informativa</h4>
+    <h4>Fecha: {{datosObtenidos.dateChecked | date}}</h4>
   </div>
   <div class="card-body">
     <div class="campo">
-      <span class="campo-titulo">Campo 1:</span>
-      <span class="campo-valor">Valor 1</span>
+      <strong> <span class="campo-titulo">Incremento positivos: </span> </strong>
+      <span class="campo-valor">{{datosObtenidos?.positiveIncrease | number}}</span>
     </div>
     <hr />
     <div class="campo">
-      <span class="campo-titulo">Campo 2:</span>
-      <span class="campo-valor">Valor 2</span>
+      <strong> <span class="campo-titulo">Positivos totales: </span> </strong>
+      <span class="campo-valor">{{datosObtenidos?.positive | number}}</span>
     </div>
     <hr />
     <div class="campo">
-      <span class="campo-titulo">Campo 3:</span>
-      <span class="campo-valor">Valor 3</span>
+      <strong> <span class="campo-titulo">Incremento de Muertos: </span> </strong>
+      <span class="campo-valor">{{datosObtenidos?.deathIncrease | number}}</span>
     </div>
     <hr />
     <div class="campo">
-      <span class="campo-titulo">Campo 4:</span>
-      <span class="campo-valor">Valor 4</span>
+      <strong> <span class="campo-titulo">Muertos Totales: </span> </strong>
+      <span class="campo-valor">{{datosObtenidos?.death | number}} </span>
+    </div>
+    <hr />
+    <div class="campo">
+      <strong> <span class="campo-titulo">Hospitalizados Actualmente: </span> </strong>
+      <span class="campo-valor">{{datosObtenidos?.hospitalizedCurrently | number}}</span>
+    </div>
+    <hr />
+    <div class="campo">
+      <strong> <span class="campo-titulo">Hospitalizados Totales: </span> </strong>
+      <span class="campo-valor">{{datosObtenidos?.hospitalizedCumulative | number}}</span>
     </div>
   </div>
 </div>

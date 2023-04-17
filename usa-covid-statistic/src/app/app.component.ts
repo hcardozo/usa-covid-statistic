@@ -21,12 +21,12 @@ export class AppComponent {
     console.log(this.fecha.replace(/-/g, ''));
 
     this.httpService.get(`https://api.covidtracking.com/v1/us/${this.fecha.replace(/-/g, '')}.json`).subscribe((response:any) =>{
-      if (response?.error) {
-        alert('Datos no encontrados, seleccione una fecha mas antigua.')
+      if (response) {
+        this.datosObtenidos= response;
       }
     }, (errorResponse)=>{
       if (errorResponse?.error) {
-        alert('Datos no encontrados, seleccione una fecha mas antigua.')
+        alert('Datos no encontrados en nuestra base de datos, seleccione una fecha diferente.')
       }
     });
 
